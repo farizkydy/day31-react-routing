@@ -1,0 +1,6 @@
+body { font-family: system-ui, 'Segoe UI', Roboto, sans-serif; margin: 0; color: #1e2a3a; }
+nav { display: flex; gap: 16px; padding: 12px 24px; background: #e6f4f8; }
+nav a { color: #00708a; text-decoration: none; }
+nav a.active { font-weight: 700; border-bottom: 2px solid #0095b4; }
+main { padding: 24px; max-width: 720px; }
+button { padding: 8px 14px; margin-right: 8px; cursor: pointer; }
