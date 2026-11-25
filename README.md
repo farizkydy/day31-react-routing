@@ -47,8 +47,11 @@ npm install   # wajib setelah pindah ke step 1 atau step 6 (ada package baru)
 Lihat perubahan satu step: `git diff step-2-route-params step-3-layout`.
 
 ## Langkah Live Coding
+Ringkasan tiap step ada di bawah. Panduan lengkap (konsep, kode lengkap per file, checklist hasil, dan kesalahan umum) ada di folder `docs/` pada branch step tersebut, contohnya `docs/step-3-layout.md` di branch `step-3-layout`. Karena branch berurutan, branch step yang lebih akhir juga berisi panduan step sebelumnya.
 
 ### Step 1: Routing dasar (`step-1-routing`)
+Panduan lengkap: `docs/step-1-routing.md`
+
 Tujuan: pindah halaman tanpa reload browser.
 
 1. Install router:
@@ -79,6 +82,8 @@ Tujuan: pindah halaman tanpa reload browser.
 Coba: klik menu (halaman tidak reload), buka `/asal-asalan` untuk melihat 404.
 
 ### Step 2: Route dinamis (`step-2-route-params`)
+Panduan lengkap: `docs/step-2-route-params.md`
+
 Tujuan: satu route untuk banyak produk, `/products/1`, `/products/2`, dst.
 
 1. Buat `src/pages/ProductDetail.jsx`, ambil `id` dari URL dengan `useParams`:
@@ -94,6 +99,8 @@ Tujuan: satu route untuk banyak produk, `/products/1`, `/products/2`, dst.
 Coba: klik produk, lalu buka `/products/999`.
 
 ### Step 3: Nested route dan Layout (`step-3-layout`)
+Panduan lengkap: `docs/step-3-layout.md`
+
 Tujuan: navbar ditulis sekali, dipakai semua halaman.
 
 1. Buat `src/components/Layout.jsx` berisi `<nav>` dengan `NavLink` dan `<Outlet />` sebagai tempat halaman anak muncul.
@@ -112,6 +119,8 @@ Tujuan: navbar ditulis sekali, dipakai semua halaman.
 Coba: pindah halaman dan lihat menu aktif berubah warna.
 
 ### Step 4: AuthContext (`step-4-auth-context`)
+Panduan lengkap: `docs/step-4-auth-context.md`
+
 Tujuan: status login bisa dibaca dari komponen mana pun tanpa prop drilling.
 
 1. Buat `src/context/AuthContext.jsx`: `AuthProvider` menyimpan `user` di state (awalnya dibaca dari `localStorage`), plus fungsi `login(role)` dan `logout()`. Export hook `useAuth()`.
@@ -123,6 +132,8 @@ Tujuan: status login bisa dibaca dari komponen mana pun tanpa prop drilling.
 Coba: login, refresh browser (status tetap), lalu logout.
 
 ### Step 5: ProtectedRoute (`step-5-protected-route`)
+Panduan lengkap: `docs/step-5-protected-route.md`
+
 Tujuan: halaman Admin hanya untuk admin. Yang belum login diarahkan ke Login, lalu dikembalikan ke halaman tujuan.
 
 1. Buat `src/components/ProtectedRoute.jsx`:
@@ -144,6 +155,8 @@ Tujuan: halaman Admin hanya untuk admin. Yang belum login diarahkan ke Login, la
 Coba: logout, buka `/admin` (diarahkan ke Login), masuk sebagai Admin (kembali ke `/admin`). Masuk sebagai Pembeli lalu buka `/admin` (diarahkan ke beranda).
 
 ### Step 6: Caching dengan TanStack Query (`step-6-caching`)
+Panduan lengkap: `docs/step-6-caching.md`
+
 Tujuan: data produk tidak diambil ulang setiap kali kembali ke halaman Produk.
 
 1. Install:
