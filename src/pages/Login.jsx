@@ -1,13 +1,15 @@
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
 export default function Login() {
   const { login } = useAuth()
   const navigate = useNavigate()
+  const location = useLocation()
+  const from = location.state?.from?.pathname || '/'
 
   const handleLogin = (role) => {
     login(role)
-    navigate('/')
+    navigate(from, { replace: true })
   }
 
   return (
